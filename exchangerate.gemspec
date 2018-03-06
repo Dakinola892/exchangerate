@@ -6,12 +6,12 @@ require 'exchangerate/version'
 Gem::Specification.new do |spec|
   spec.name          = "exchangerate"
   spec.version       = Exchangerate::VERSION
-  spec.authors       = ["Dakinola892"]
-  spec.email         = ["dakinola892@gmail.com"]
+  spec.authors = ["Daniel Akinola"]
+  spec.email = ["adwakinola@gmail.com"]
 
-  spec.summary       = %q{TODO: Write a short summary, because Rubygems requires one.}
-  spec.description   = %q{TODO: Write a longer description or delete this line.}
-  spec.homepage      = "TODO: Put your gem's website or public repo URL here."
+  spec.summary = "A gem for getting exchange rates"
+  spec.description = "This library provides exchange rates using data from ECB 90-day feed, updated daily and (assuming data can download at least once a day) suitable for offline-use due to data being stored locally"
+  spec.homepage = "https://www.github.com/Dakinola892"
   spec.license       = "MIT"
 
   # Prevent pushing this gem to RubyGems.org. To allow pushes either set the 'allowed_push_host'
@@ -23,9 +23,7 @@ Gem::Specification.new do |spec|
       "public gem pushes."
   end
 
-  spec.files         = `git ls-files -z`.split("\x0").reject do |f|
-    f.match(%r{^(test|spec|features)/})
-  end
+  spec.files = ["lib/exchangerate/rates.xml", "lib/exchangerate.rb", "lib/exchangerate/rate_finder.rb"]
   spec.bindir        = "exe"
   spec.executables   = spec.files.grep(%r{^exe/}) { |f| File.basename(f) }
   spec.require_paths = ["lib"]
